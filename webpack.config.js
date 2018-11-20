@@ -15,7 +15,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
+  mode: 'development',
   devtool: 'inline-source-map',
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   /* devServer: {
     contentBase: './dist',
     hot: true,
@@ -34,6 +40,6 @@ module.exports = {
   plugins: [
     htmlPlugin,
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']),
+    /* new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']), */
   ],
 };
